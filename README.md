@@ -1,4 +1,4 @@
-# debian-live-build
+# debian-my-live-build
 
 Set up a custom debian live image (CD / USB) with the following features:
 
