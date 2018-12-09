@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -e
+
+# Enable auto boot so that no keyboard is required.
+echo "set timeout=5" >> boot/grub/grub.cfg

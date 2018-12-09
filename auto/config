@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+# Enable all repositories and backports (for zfs).
+lb config noauto \
+	--architectures amd64 \
+	--system live \
+	--updates true \
+	--backports true \
+	--security true \
+	--distribution stretch \
+	--archive-areas "main contrib non-free" \
+	--debian-installer live \
+	--bootappend-live "boot=live components hostname=debian-live" \
+	--linux-packages "linux-image linux-headers" \
+	--memtest memtest86 \
+	--mirror-binary http://www.nic.funet.fi/debian \
+	--mirror-bootstrap http://www.nic.funet.fi/debian \
+	"$@"
