@@ -9,8 +9,8 @@ apt-get -y install \
 # Remove settings we want to change (if set).
 # shellcheck disable=SC2002
 cat /etc/ssh/sshd_config \
-        | grep -v "^PermitRootLogin" \
-        | grep -v "^PasswordAuthentication" \
+        | grep -E -v "^#?PermitRootLogin" \
+        | grep -E -v "^#?PasswordAuthentication" \
         | tee /etc/ssh/sshd_config
 
 # Allow root to login via password.
