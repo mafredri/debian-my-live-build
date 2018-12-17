@@ -6,7 +6,7 @@ set -e
 apt-get -y install dpkg-dev linux-headers-amd64 linux-image-amd64
 
 # Install newer zfs from backports.
-apt-get -y install -t stretch-backports zfs-dkms
+apt-get -y install -t $(lsb_release -cs)-backports zfs-dkms
 echo zfs >> /etc/modules
 
 systemctl disable zfs-mount

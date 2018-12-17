@@ -17,7 +17,9 @@ lb config \
 # Gimmeh X.
 echo task-kde-desktop > config/package-lists/my-live.list.chroot
 
-echo less \
+echo \
+	lsb-release \
+	less \
 	vim \
 	curl \
 	cryptsetup \
