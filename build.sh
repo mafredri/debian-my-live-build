@@ -34,7 +34,7 @@ echo \
 
 # Link our pretty little hooks.
 for hook in hooks/*/*; do
-	(cd config/"$(dirname "$hook")" && ln -s ../../../"$hook" ./)
+	(cd config/"$(dirname "$hook")" && ln -s ../../../"$hook" ./ || true)
 done
 
 # Let there be image.
