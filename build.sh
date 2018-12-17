@@ -7,10 +7,12 @@
 
 set -e
 
-# For some reason, live build doesn't build anything other than iso-hybrid.
-#lb config --binary-images hdd
-
-lb config --binary-images iso-hybrid
+# For some reason, live build doesn't build anything other than `iso-hybrid`.
+# Might use `hdd` here otherwise.
+lb config \
+	--distribution stretch \
+	--binary-images iso-hybrid \
+	"$@"
 
 # Gimmeh X.
 echo task-kde-desktop > config/package-lists/my-live.list.chroot

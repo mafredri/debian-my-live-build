@@ -9,7 +9,6 @@ lb config noauto \
 	--updates true \
 	--backports true \
 	--security true \
-	--distribution stretch \
 	--archive-areas "main contrib non-free" \
 	--debian-installer live \
 	--bootappend-live "boot=live components hostname=debian-live" \
