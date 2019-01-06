@@ -30,7 +30,10 @@ echo \
 	openssh-client \
 	openssh-server \
 	net-tools \
-	smartmontools > config/package-lists/tools.list.chroot
+	smartmontools \
+	mdadm \
+	lvm2 \
+	> config/package-lists/tools.list.chroot
 
 # Link our pretty little hooks.
 for hook in hooks/*/*; do
