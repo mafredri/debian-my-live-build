@@ -15,25 +15,25 @@ lb config \
 	"$@"
 
 # Gimmeh X.
-echo task-kde-desktop > config/package-lists/my-live.list.chroot
+echo task-kde-desktop >config/package-lists/my-live.list.chroot
 
 echo \
-	lsb-release \
-	less \
-	vim \
-	curl \
 	cryptsetup \
+	curl \
 	dosfstools \
-	usbutils \
-	pciutils \
+	less \
+	lsb-release \
 	lshw \
+	lvm2 \
+	mdadm \
+	net-tools \
 	openssh-client \
 	openssh-server \
-	net-tools \
+	pciutils \
 	smartmontools \
-	mdadm \
-	lvm2 \
-	> config/package-lists/tools.list.chroot
+	usbutils \
+	vim \
+	>config/package-lists/tools.list.chroot
 
 # Link our pretty little hooks.
 for hook in hooks/*/*; do
