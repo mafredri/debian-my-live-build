@@ -3,19 +3,19 @@
 set -e
 
 apt-get -y install \
-        openssh-server \
-        openssh-client
+	openssh-server \
+	openssh-client
 
 # Remove settings we want to change (if set).
 # shellcheck disable=SC2002
 cat /etc/ssh/sshd_config \
-        | grep -E -v "^#?PermitRootLogin" \
-        | grep -E -v "^#?PasswordAuthentication" \
-        | tee /etc/ssh/sshd_config
+	| grep -E -v "^#?PermitRootLogin" \
+	| grep -E -v "^#?PasswordAuthentication" \
+	| tee /etc/ssh/sshd_config
 
 # Allow root to login via password.
-echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
-echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
+echo "PermitRootLogin yes" >>/etc/ssh/sshd_config
+echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
 systemctl enable ssh
 
 # Set root password to 'live'.
