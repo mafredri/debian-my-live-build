@@ -17,6 +17,9 @@ lb config \
 # Gimmeh X.
 echo task-kde-desktop >config/package-lists/my-live.list.chroot
 
+# Drivers (MacBook 3,1).
+echo firmware-b43-installer >>config/package-lists/my-live.list.chroot
+
 echo \
 	cryptsetup \
 	curl \
