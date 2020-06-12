@@ -23,16 +23,26 @@ apt-get update && apt-get install live-build
 ./build.sh
 ```
 
+## Docker
+
+TODO:
+- Cache volume
+
+```shell
+docker build . -t maf/debian-build
+docker run -it --rm -v $PWD:/work --cap-add SYS_ADMIN maf/debian-build
+```
+
 When the image is done, write it to a USB drive:
 
 ```shell
 dd if=live-image-amd64.hybrid.iso of=/dev/sdX bs=4096 status=progress
+gdd if=live-image-amd64.hybrid.iso of=/dev/rdisk2 bs=4M conv=sync status=progress
 ```
 
 ## TODO
 
 - Makefile
-- Run in Docker
 
 ## Links
 
