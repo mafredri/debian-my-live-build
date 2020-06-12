@@ -20,7 +20,9 @@ echo task-kde-desktop >config/package-lists/my-live.list.chroot
 echo \
 	cryptsetup \
 	curl \
+	debootstrap \
 	dosfstools \
+	git \
 	less \
 	lsb-release \
 	lshw \
@@ -31,6 +33,8 @@ echo \
 	openssh-server \
 	pciutils \
 	smartmontools \
+	tmux \
+	lm-sensors \
 	usbutils \
 	vim \
 	>config/package-lists/tools.list.chroot
