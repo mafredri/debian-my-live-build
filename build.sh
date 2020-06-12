@@ -10,7 +10,7 @@ set -e
 # For some reason, live build doesn't build anything other than `iso-hybrid`.
 # Might use `hdd` here otherwise.
 lb config \
-	--distribution stretch \
+	--distribution ${1:-buster} \
 	--binary-images iso-hybrid \
 	"$@"
 
